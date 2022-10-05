@@ -1,0 +1,23 @@
+name: superset-app
+description: Describe your template explaining its purpose
+types:
+  - app-template
+inputs:
+  - label: Admin Email
+    type: text
+    name: user_email
+    default: admin
+
+  - label: Admin Password
+    type: text
+    name: user_pass
+    default: admin
+hooks:
+  - type: run
+    trigger: after-render
+    linux:
+      - ./run_superset.sh
+    windows:
+      - cmd /c run_superset.bat
+    mac:
+      - sh ./run_superset.sh
