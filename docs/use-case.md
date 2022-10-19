@@ -1,31 +1,24 @@
 # Use case
 
 ## Visão Geral:
-Facilmente transforme seus documentos da StackSpot em markdown em uma web page. Customize com temas.
+Facilmente a análise de dados usando o SQL para diversas fontes de dados, todas no mesmo local, e com uma capacidade incrível de gestão de acessos visando segurança para compartilhamento de dados
 
 ## Pré-requisitos:
 + STK CLI
-+ Python 3.6+
-+ pip
++ Docker
 + Docker Compose
 
 ## Inputs
 Os inputs necessários para utilizar o template são:
 | Campo | Valor | Descrição |
-| Project name | Texto | Nome do projeto |
-| Topic name | Texto | Nome do tópico do Kafka a ser utilizado|
+| Admin Email | Texto | Email do usuario que vai ser admin da ferramenta |
+| Admin Password | Texto | Senha do usuario que vai ser admin da ferramenta |
 
 ## Serviços:
-+ `Kafka` : Construído em cima da imagem *confluentinc/cp-kafka*.
-+ `Zookeeper` : Construído em cima da imagem *confluentinc/cp-zookeeper*.
-+ `Kafdrop` : Construído em cima da imagem*obsidiandynamics/kafdrop*.
++ `Superset` : Construído em cima da imagem *apache/superset*.
 
 ## Portas:
-+ `Kafka`
-    - Porta externa: 9092
-    - Porta interna: 29092
-+ `Zookeeper` : porta: 2181
-+ `Kafdrop` : porta: 19000
++ `Superset` : porta: 8180
 
 ## Quick-start:
 ### Inicie os serviços
@@ -37,29 +30,4 @@ docker compose up -d
 docker compose ps
 ```
 ### Accesse a pagina via browser
-Abra um browser e acesse http://localhost:19000
-
-### Inicie o listener
-
-Por padrão estaremos escutando o tópico: {{topic_name}}
-```shell
-python3 -u consumer.py 
-```
-
-### Envie uma mensagem
-Use o producer.py para enviar sua primeira mensagem
-```shell
-python3 -u producer.py 
-```
-### Mude a mensagem
-
-```python
-
-if __name__ == '__main__':
-    SERVER = 'localhost:9092'   # Esse é o servidor do Kafka
-    TOPIC = '{{topic_name}}'    # Precisamos especificar o tópico
-    message = {'foo': 'bar'}    # Kafka aceita serializables ou bytes
-
-    main(SERVER, TOPIC, message)
-
-```
+Abra um browser e acesse http://localhost:8180/

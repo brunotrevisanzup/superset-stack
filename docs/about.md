@@ -1,11 +1,11 @@
 # About kafka-with-python stack
 
-omece facilmente a utilizar o Kafka para desenvolver servios utilizando uma **Arquitetura voltada a eventos**.
-Use `Python` e outras ferramentas com `GUI` para facilitar seus testes, e deixar seu ambiente organizado.
+Comece facilmente a utilizar o SuperSet para desenvolver DashBoards e Análise de Dados.
+Use o melhor das conectividades `Python` com outras ferramentas para criar conectores entre diversas bases de dados e utilizar todos eles em uma única ferramenta.
 
 
 ## Estrutura da Stack
-A **Stack kafka-with-python** foi desenvolvida seguindo todas boas práticas de arquitetura de software:
+A **Stack SUPERSET-STACK** foi desenvolvida seguindo todas boas práticas de arquitetura de software:
 + Clean Architecture
 + Componenentes desacoplados
 
