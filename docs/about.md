@@ -1,4 +1,4 @@
-# About kafka-with-python stack
+# About SUPERSET stack
 
 Comece facilmente a utilizar o SuperSet para desenvolver DashBoards e Análise de Dados.
 Use o melhor das conectividades `Python` com outras ferramentas para criar conectores entre diversas bases de dados e utilizar todos eles em uma única ferramenta.
